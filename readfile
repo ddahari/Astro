@@ -1,0 +1,19 @@
+# Open the text file for reading
+file_path = 'data.txt'  
+try:
+    with open(file_path, 'r') as file:
+        # Read each line from the file
+        for line in file:
+            # Split the line into two columns based on a single space
+            columns = line.strip().split(' ')
+            
+            # Print the contents of each column
+            if len(columns) == 2:
+                print(f'Column 1: {columns[0]}, Column 2: {columns[1]}')
+            else:
+                print(f'Invalid line: {line}')
+
+except FileNotFoundError:
+    print(f"File not found: {file_path}")
+except Exception as e:
+    print(f"An error occurred: {e}")
